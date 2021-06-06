@@ -13,7 +13,7 @@
      </router-link>
      <figure>
        <router-link :to="destination.slug">
-         <img :src="require(`@!/assets/${destination.image}`)">
+         <img :src="require(`@/assets/${destination.image}`)">
        </router-link>
      </figure>  
     </div>
