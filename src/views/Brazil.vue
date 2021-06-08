@@ -5,8 +5,8 @@
         </h2>   
     </div>
 </template>
-<script>
-export default {
-  name: "Brazil",
-};
-</script>
+// <script>
+// export default {
+//   name: "Brazil",
+// };
+// </script>

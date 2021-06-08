@@ -1,8 +1,12 @@
 <template>
     <div>
         <h2>
-            Hawai
+            Hawaii
         </h2>   
     </div>
 </template>
 <script>
+export default {
+  name: "Brazil",
+};
+</script>
