@@ -14,17 +14,44 @@ import store from '@/store';
  export default{
      data(){
          return{
-             destinationId: this.$route.params.id, // store the destination id in specific var
+            //  slug: this.$route.params.slug, // store the destination id in specific var
          }
+     },
+     props:{
+      slug:{
+          type: String,
+          required: true,
+
+      }  
      },
      computed: {
          destination(){
              return store.destinations.find(
                  destination => {
-                 return destination.id===this.destinationId;
+                 return destination.slug===this.slug;
                }
              )
          }
      }
  }
 </script>
+<style scoped>
+img {
+  max-width: 600px;
+  height: auto;
+  width: 100%;
+  max-height: 400px;
+}
+.destination-details {
+  display: flex;
+  justify-content: space-between;
+}
+p {
+  margin: 0 40px;
+  font-size: 20px;
+  text-align: left;
+}
+.active-class-router{
+    color: blue;
+}
+</style>

@@ -9,7 +9,7 @@
       <router-link to="/panama">Panama</router-link> |
       <router-link to="/about">About</router-link> for testing -->
     </div>
-    <router-view />
+    <router-view :key="$route.path" /> <!-- this tells the router view to refresh the component when path is changed-->
   </div>
 </template>
 <script>
