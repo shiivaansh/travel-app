@@ -8,11 +8,11 @@
     <div class="destinations">
     <div v-for="destination in destinations" 
      v-bind:key="destination.name">
-     <router-link :to="destination.slug">
+     <router-link :to="{name: 'DestinationPage', params:{id:destination.id}}">
        <h2>{{destination.name}}</h2>
      </router-link>
      <figure>
-       <router-link :to="destination.slug">
+       <router-link :to="{name: 'DestinationPage', params:{id:destination.id}}">
          <img :src="require(`@/assets/${destination.image}`)">
        </router-link>
      </figure>  

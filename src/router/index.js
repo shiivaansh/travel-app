@@ -50,6 +50,14 @@ const routes = [
       import("../views/Panama.vue")
 
   },
+  {
+    path: "/details:id", 
+    // <!-- colon declares a dynamic section of a path-->           
+    name: "DestinationPage", 
+    component:()=>
+      import("../views/DestinationPage.vue")
+
+  },
 ];
 
 const router = new VueRouter({
