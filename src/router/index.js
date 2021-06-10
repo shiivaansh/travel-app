@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 // import { component } from "vue/types/umd";
 import Home from "../views/Home.vue";
-
+// import ExperienceDetails from "../views/ExperienceDetails.vue";
 
 Vue.use(VueRouter);
 
@@ -13,7 +13,14 @@ const routes = [
     props: true,
     component: Home,
   },
-  // {
+  {
+    path: "/:slug/experience",  //how to get exp name???
+    name: "ExperienceDetails",
+    props: true,
+    component:()=>
+      import("../Components/ExperienceDetails.vue"),
+  },
+  // // {
   //   path: "/about",
   //   name: "About",
   //   // route level code-splitting
@@ -57,14 +64,14 @@ const routes = [
     props: true,
     component:()=>
       import("../views/DestinationPage.vue"),
-      children: [
-        {
-          path: "/:experienceSlug",
-          name: "experienceDetails",
-          props: true,
-          component:()=> import("../views/ExperienceDetails.vue"),
-        }
-      ]
+      // children: [
+      //   {
+      //     path: ":experienceSlug",
+      //     name: "ExperienceDetails",
+      //     props: true,
+      //     component:()=> import("../Components/ExperienceDetails.vue"),
+      //   }
+      // ]
 
   },
   // {

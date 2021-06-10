@@ -1,5 +1,6 @@
 <template>
     <section>
+      
         <h1>Experiences</h1>
         <h2>{{experience.name}}</h2>
         <div class="experience-details">
@@ -41,14 +42,15 @@ import store from "@/store.js";
 // }
 // };
 export default {
+  name: "ExperienceDetails",
   props: {
     slug: {
       type: String,
-      required: true
+      required: true,
     },
     experienceSlug: {
       type: String,
-      required: true
+      required: true,
     }
   },
   computed: {

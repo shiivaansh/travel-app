@@ -8,7 +8,7 @@
     <div class="destinations">
     <div v-for="destination in destinations" 
      v-bind:key="destination.name">
-     <router-link :to="{name: 'DestinationPage', params:{slug:destination.slug}}">
+     <router-link :to="{name: 'DestinationPage', params:{slug:destination.slug}}"> <!--what is params?-->
        <h2>{{destination.name}}</h2>
      </router-link>
      <figure>

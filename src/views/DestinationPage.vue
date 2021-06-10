@@ -19,7 +19,7 @@
         >
           <router-link
             :to="{
-              name: 'experienceDetails',
+              name: 'ExperienceDetails',
               params: { experienceSlug: experience.slug },
               
             }"
@@ -34,7 +34,7 @@
           </router-link>
         </div>
       </div>
-      <router-view :key="$route.path" />
+      <!-- <router-view :key="$route.path" /> --> <!-- only for rendering exp on the same page as destination detail-->
     </section>
        <!-- <section class="experiences">
             <h2>Top experiences in {{destination.name}}</h2>
