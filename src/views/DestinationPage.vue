@@ -1,5 +1,6 @@
 <template>
-    <h2>
+<div>
+    
        <section class="destination">
            <h1> {{destination.name}} </h1>
            <div class="destination-details">
@@ -7,15 +8,59 @@
                <p>{{destination.description}}</p>
            </div>
        </section>
-    </h2>    
+    
+     <section class="experiences">
+      <h2>Top experiences in {{ destination.name }}</h2>
+      <div class="cards" id="experience">
+        <div
+          v-for="experience in destination.experiences"
+          :key="experience.slug"
+          class="card"
+        >
+          <router-link
+            :to="{
+              name: 'experienceDetails',
+              params: { experienceSlug: experience.slug },
+              
+            }"
+          >
+            <img
+              :src="require(`@/assets/${experience.image}`)"
+              :alt="experience.name"
+            />
+            <span class="card__text">
+              {{ experience.name }}
+            </span>
+          </router-link>
+        </div>
+      </div>
+      <router-view :key="$route.path" />
+    </section>
+       <!-- <section class="experiences">
+            <h2>Top experiences in {{destination.name}}</h2>
+            <div class="cards">
+                <div class="card" v-for="experience in destination.experiences" :key="experience.slug"> -->
+                     <!-- sytax of v-for to be kept in mind-->
+                     <!-- <router-link :to="{
+                         name: 'ExperienceDetails',
+                         params:{experienceSlug: experience.slug}}">
+                    <img :src="require(`@/assets/${experience.image}`)" :alt="experience.name">
+                    <span class="card-text">{{experience.name}}</span>
+                     </router-link>
+                     
+                </div>
+            </div>
+            <router-view :key="$route.path"/>
+       </section> -->
+</div>   
 </template>
 <script>
 import store from '@/store';
- export default{
+export default{
      data(){
          return{
             //  slug: this.$route.params.slug, // store the destination id in specific var
-         }
+         };
      },
      props:{
       slug:{
@@ -53,5 +98,26 @@ p {
 }
 .active-class-router{
     color: blue;
+}
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+.cards img {
+  max-height: 200px;
+}
+.card {
+  padding: 0 20px;
+  position: relative;
+}
+.card__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
 }
 </style>

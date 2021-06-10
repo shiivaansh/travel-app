@@ -4,7 +4,6 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 
 
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -57,9 +56,23 @@ const routes = [
     name: "DestinationPage", 
     props: true,
     component:()=>
-      import("../views/DestinationPage.vue")
+      import("../views/DestinationPage.vue"),
+      children: [
+        {
+          path: "/:experienceSlug",
+          name: "experienceDetails",
+          props: true,
+          component:()=> import("../views/ExperienceDetails.vue"),
+        }
+      ]
 
   },
+  // {
+  //   path: "/:experienceSlug",
+  //   name: "ExperienceDetails",
+  //   props: true,
+  //   component: () => import("../views/ExperienceDetails.vue")
+  //   }
 ];
 
 const router = new VueRouter({
