@@ -13,13 +13,13 @@ const routes = [
     props: true,
     component: Home,
   },
-  {
-    path: "/:slug/experience",  //how to get exp name???
-    name: "ExperienceDetails",
-    props: true,
-    component:()=>
-      import("../Components/ExperienceDetails.vue"),
-  },
+  // {
+  //   path: "/:slug/:experienceSlug",  //how to get exp name???
+  //   name: "ExperienceDetails",
+  //   props: true,
+  //   component:()=>
+  //     import("../Components/ExperienceDetails.vue"),
+  // },
   // // {
   //   path: "/about",
   //   name: "About",
@@ -64,14 +64,14 @@ const routes = [
     props: true,
     component:()=>
       import("../views/DestinationPage.vue"),
-      // children: [
-      //   {
-      //     path: ":experienceSlug",
-      //     name: "ExperienceDetails",
-      //     props: true,
-      //     component:()=> import("../Components/ExperienceDetails.vue"),
-      //   }
-      // ]
+      children: [
+        {
+          path: ":experienceSlug",
+          name: "ExperienceDetails",
+          props: true,
+          component:()=> import("../Components/ExperienceDetails.vue"),
+        }
+      ]
 
   },
   // {

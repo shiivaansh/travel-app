@@ -1,6 +1,6 @@
 <template>
     <section>
-      
+      <GoBack/>
         <h1>Experiences</h1>
         <h2>{{experience.name}}</h2>
         <div class="experience-details">
@@ -12,6 +12,7 @@
 </template>
 <script>
 import store from "@/store.js";
+import GoBack from '@/Components/GoBack.vue';
 // export default{
 //     data(){
 //          return{
@@ -43,6 +44,9 @@ import store from "@/store.js";
 // };
 export default {
   name: "ExperienceDetails",
+  components:{
+    GoBack,
+  },
   props: {
     slug: {
       type: String,

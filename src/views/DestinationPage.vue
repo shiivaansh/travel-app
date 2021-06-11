@@ -1,5 +1,6 @@
 <template>
-<div>
+<div> 
+       <GoBack/>
     
        <section class="destination">
            <h1> {{destination.name}} </h1>
@@ -34,7 +35,7 @@
           </router-link>
         </div>
       </div>
-      <!-- <router-view :key="$route.path" /> --> <!-- only for rendering exp on the same page as destination detail-->
+      <router-view :key="$route.path" /> <!-- only for rendering exp on the same page as destination detail-->
     </section>
        <!-- <section class="experiences">
             <h2>Top experiences in {{destination.name}}</h2>
@@ -56,7 +57,11 @@
 </template>
 <script>
 import store from '@/store';
+import GoBack from '@/Components/GoBack.vue';
 export default{
+  components:{
+    GoBack,
+  },
      data(){
          return{
             //  slug: this.$route.params.slug, // store the destination id in specific var

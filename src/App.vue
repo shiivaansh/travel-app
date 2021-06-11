@@ -9,7 +9,9 @@
       <router-link to="/panama">Panama</router-link> |
       <router-link to="/about">About</router-link> for testing -->
     </div>
-    <router-view :key="$route.path" /> <!-- this tells the router view to refresh the component when path is changed-->
+     <transition name="fade">
+      <router-view :key="$route.path" /><!-- this tells the router view to refresh the component when path is changed-->
+    </transition> 
   </div>
 </template>
 <script>
@@ -32,6 +34,13 @@
 #nav {
   padding: 0 10px;
 }
-
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 
 </style>
